@@ -10,4 +10,3 @@ echo "Process instance id of current script: $$"
 #source ./19-others.sh  # 2nd way of calling shell script
 
 echo "After calling other script Course: $COURSE"
-echo "Process instance id of current script: $$"

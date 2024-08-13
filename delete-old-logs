@@ -11,11 +11,11 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-if [ -d $SOURCE_DIRECTORY]
+if [ -d $SOURCE_DIRECTORY ]
 then
     echo " $SOURCE_DIRECTORY is already exists"
 else
-    ech "Please make sure $SOURCE_DIRECTORY  exists"
+    echo "Please make sure $SOURCE_DIRECTORY  exists"
 fi
 
 FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
@@ -23,4 +23,4 @@ FILES=$(find $SOURCE_DIRECTORY -name "*.log" -mtime +14)
 while IFS= read -r line
 do
     echo "Deleting file: $line"
-done >>> $FILES
+done <<< $FILES

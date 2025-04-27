@@ -48,14 +48,17 @@ else
     echo -e "user id expense is already exists $Y SKIPPING $N"
 fi
 
-mkdir -p app/ &>>LOGFILE
+mkdir -p /app &>>LOGFILE
 VALIDATE $? "Crearing app directory"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOGFILE
 cd /app
+rm -rf /app/*
 unzip /tmp/backend.zip &>>$LOGFILE
 VALIDATE $? "Unzip the backend file"
+
 cd /app
+
 npm install &>>$LOGFILE
 VALIDATE $? "Installing dependent libraries"
 

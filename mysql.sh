@@ -38,11 +38,11 @@ VALIDATE $? "start mysql server"
 systemctl enable mysqld &>>LOGFILE
 VALIDATE $? "Enable myslq server"
 
-mysql -h hasamahas.site -uroot -p${mysql_root_password} -e 'show databases;' &>>LOGFILE
+mysql -h db.hasamahas.site -uroot -p${mysql_root_password} -e 'show databases;' &>>LOGFILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>LOGFILE
-    VALIDATE $? "MySQL root password set"
+    VALIDATE $? "MySQL root password setup"
 else
     echo -e "MySQL root password is already set up $Y SKIPPING $N"
 fi

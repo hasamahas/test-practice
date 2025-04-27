@@ -23,7 +23,7 @@ VALIDATE(){
     fi
 
 }
-if [$USERID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
     echo "Please run the command with root user"
 else
@@ -41,7 +41,7 @@ VALIDATE $? "Installing nodejs"
 
 id expense
 
-if [$? -ne 0 ]
+if [ $? -ne 0 ]
 then
     useradd expense &>>$LOGFILE
 else

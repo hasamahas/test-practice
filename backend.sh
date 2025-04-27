@@ -45,10 +45,11 @@ if [ $? -ne 0 ]
 then
     useradd expense &>>$LOGFILE
 else
-    echo "user id expense is already exists $Y SKIPPING $N"
+    echo -e "user id expense is already exists $Y SKIPPING $N"
 fi
 
 mkdir -p app/ &>>LOGFILE
+VALIDATE $? "Crearing app directory"
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOGFILE
 cd /app

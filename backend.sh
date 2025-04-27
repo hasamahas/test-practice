@@ -77,7 +77,7 @@ VALIDATE $? "enable backend"
 dnf install mysql -y &>>$LOGFILE
 VALIDATE $? "Installing mysql server client"
 
-mysql -h db.hasamas.site -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
+mysql -h db.hasamahas.site -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>$LOGFILE
 VALIDATE $? "Loading DB schema"
 
 systemctl restart backend &>>$LOGFILE

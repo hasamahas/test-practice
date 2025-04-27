@@ -3,7 +3,7 @@
 USERID=$(id -u)
 
 TIMESTAMP=$(date +%F-%H-%M-%S)
-SCRIPT_NAME=$(ech $0 | cut -d "." -f1)
+SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT_NAME-$TIMESTAMP.log
 
 R="\e[31m"
@@ -20,7 +20,7 @@ VALIDATE(){
         exit 1
     else
         echo -e "$2..$G SUCCESS $N"
-    if
+    fi
 
 }
 if [$USERID -ne 0 ]

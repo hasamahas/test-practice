@@ -42,7 +42,7 @@ VALIDATE $? "Enable myslq server"
 mysql -h hasamahas.site -uroot -p${mysql_root_password} -e 'show databases;' &>>LOGFILE
 if [ $? -ne 0 ]
 then
-    mysql_secure_installation -uroot -p{mysql_root_password} &>>LOGFILE
+    mysql_secure_installation --set-root-pass ${mysql_root_password} &>>LOGFILE
     VALIDATE $? "MySQL root password set"
 else
     echo "MySQL root password is already set up"

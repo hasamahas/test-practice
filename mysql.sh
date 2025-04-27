@@ -11,21 +11,20 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-echo "Enter MySQL DB password"
+echo "Enter MySQL db password:"
 read -s mysql_root_password
-
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 .. $R FAILURE $N"
+        echo -e "$2..$R FAILURE $N"
     else
-        echo -e "$2 .. $G SUCCESS $N"
-    if
+        echo -e "$2..$G SUCCESS $N"
+    fi
 }
-
 if [ $USERID -ne 0 ]
 then
     echo "please run this command with root user"
+    exit 1
 else
     echo "You are super user"
 fi
